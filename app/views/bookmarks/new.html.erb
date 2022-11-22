@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <h1>Add new bookmark for <%= @list.name %></h1>
+
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :movie, collection: @movies, prompt: "Select the movie", selected: :first %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
